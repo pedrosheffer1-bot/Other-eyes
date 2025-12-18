@@ -1,23 +1,20 @@
-
 import React, { useState } from 'react';
 import { HashRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
-import Dashboard from './screens/Dashboard';
-import NewTransaction from './screens/NewTransaction';
-import Goals from './screens/Goals';
-import Reports from './screens/Reports';
-import Profile from './screens/Profile';
-import Onboarding from './screens/Onboarding';
-import Auth from './screens/Auth';
-import Navbar from './components/Navbar';
-import AIModal from './components/AIModal';
-import { useFinance } from './context/FinanceContext';
+// CORREÇÃO: Removidos os caminhos de pastas (screens/, components/, etc)
+import Dashboard from './Dashboard';
+import NewTransaction from './NewTransaction';
+import Goals from './Goals';
+import Reports from './Reports';
+import Profile from './Profile';
+import Onboarding from './Onboarding';
+import Auth from './Auth';
+import Navbar from './Navbar';
+import AIModal from './AIModal';
+import { useFinance } from './FinanceContext';
 
 const App: React.FC = () => {
   const { user, loading, hasFinishedOnboarding } = useFinance();
   const [isAIModalOpen, setIsAIModalOpen] = useState(false);
-
-  // Simulação de Persistence do Firebase
-  // No Flutter seria: FirebaseFirestore.instance.settings = Settings(persistenceEnabled: true);
 
   if (loading) {
     return (
