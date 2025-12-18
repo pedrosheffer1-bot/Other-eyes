@@ -1,0 +1,7 @@
+{
+  "name": "Other Eyes Control",
+  "description": "A production-ready personal finance manager with AI insights, real-time balance tracking, and a soft-modern UI design.",
+  "requestFramePermissions": [
+    "camera"
+  ]
+}
