@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 
@@ -25,7 +24,7 @@ const Navbar: React.FC<{ onOpenAI: () => void }> = ({ onOpenAI }) => {
         </NavLink>
       ))}
 
-      {/* Botão de Trigger IA Mini na Navbar (Opcional, já que temos o FAB) */}
+      {/* Botão de Trigger IA Mini na Navbar */}
       <button
         onClick={onOpenAI}
         className="flex flex-col items-center gap-1.5 text-gray-300 hover:text-[#2952E3] transition-colors"
