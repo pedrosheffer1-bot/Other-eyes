@@ -4,7 +4,7 @@ import { getFirestore } from "firebase/firestore";
 
 // SUBSTITUA OS "..." PELOS DADOS QUE O FIREBASE TE DEU NO PASSO 1
 const firebaseConfig = {
-  apiKey: "SUA_API_KEY_AQUI",
+  apiKey: "AIzaSyDur7zaMLpDAN5D3uiG098qdVP-SouY3Ts",
   authDomain: "other-eyes-app.firebaseapp.com",
   projectId: "other-eyes-app",
   storageBucket: "other-eyes-app.appspot.com",
