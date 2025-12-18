@@ -1,8 +1,8 @@
-
 import React, { useState, useEffect } from 'react';
-import { useFinance } from '../context/FinanceContext';
 import { useNavigate } from 'react-router-dom';
-import { getFinancialAdvice } from '../services/geminiService';
+// CORREÇÃO: Importações ajustadas para a raiz (sem pastas)
+import { useFinance } from './FinanceContext';
+import { getFinancialAdvice } from './geminiService'; 
 
 const Dashboard: React.FC = () => {
   const { balance, income, expenses, transactions } = useFinance();
@@ -11,12 +11,22 @@ const Dashboard: React.FC = () => {
   const [loadingAdvice, setLoadingAdvice] = useState(false);
 
   useEffect(() => {
+    // Verifica se existem transações antes de chamar a IA
     if (transactions.length > 0) {
       setLoadingAdvice(true);
-      getFinancialAdvice(transactions.slice(0, 5), []).then(res => {
-        setAdvice(res || "Mantenha o foco em suas metas!");
-        setLoadingAdvice(false);
-      });
+      // Se a função getFinancialAdvice der erro ou o arquivo não existir, 
+      // comente esse bloco inteiro do useEffect temporariamente.
+      getFinancialAdvice(transactions.slice(0, 5), [])
+        .then(res => {
+          setAdvice(res || "Mantenha o foco em suas metas!");
+        })
+        .catch(() => {
+          // Fallback silencioso em caso de erro na API
+          setAdvice("Mantenha o controle para atingir seus sonhos.");
+        })
+        .finally(() => {
+          setLoadingAdvice(false);
+        });
     }
   }, [transactions.length]);
 
@@ -127,7 +137,7 @@ const Dashboard: React.FC = () => {
       {/* FAB DA IA - CANTO INFERIOR DIREITO */}
       <div className="fixed bottom-28 right-6 z-50">
         <button 
-          onClick={() => navigate('/profile')} // Ou disparar modal de chat direto
+          onClick={() => navigate('/profile')} 
           className="w-16 h-16 bg-[#2952E3] text-white rounded-[24px] flex items-center justify-center shadow-2xl shadow-[#2952E3]/40 active:scale-90 transition-all hover:rotate-12"
         >
           <span className="text-2xl">✨</span>
