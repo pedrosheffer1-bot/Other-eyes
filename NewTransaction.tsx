@@ -1,8 +1,8 @@
-
 import React, { useState, useEffect, useRef } from 'react';
-import { useFinance } from '../context/FinanceContext';
-import { CATEGORIES } from '../constants';
-import { TransactionType } from '../types';
+// CORREÇÃO: Imports diretos da raiz
+import { useFinance } from './FinanceContext';
+import { CATEGORIES } from './constants';
+import { TransactionType } from './types'; // Certifique-se que o arquivo types.ts (ou .tsx) existe na raiz
 
 const NewTransaction: React.FC = () => {
   const { addTransaction, goBack } = useFinance();
