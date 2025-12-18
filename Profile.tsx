@@ -1,7 +1,7 @@
-
 import React, { useState } from 'react';
-import { useFinance } from '../context/FinanceContext';
-import { CATEGORIES } from '../constants';
+// CORREÇÃO: Imports diretos da raiz
+import { useFinance } from './FinanceContext';
+import { CATEGORIES } from './constants'; // Verifique se constants.ts existe na raiz
 
 // --- Reusable "Widgets" (Components) ---
 
