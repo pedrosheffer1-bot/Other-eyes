@@ -2,7 +2,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './App';
-import { FinanceProvider } from './context/FinanceContext';
+import { FinanceProvider } from './FinanceContext';
 
 // Production-Ready Error Guard (Simulation of Crashlytics runZonedGuarded)
 interface ErrorGuardProps {
