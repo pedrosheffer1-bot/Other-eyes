@@ -1,6 +1,6 @@
-
 import React, { useState } from 'react';
-import { useFinance } from '../context/FinanceContext';
+// CORREÇÃO: Import direto da raiz
+import { useFinance } from './FinanceContext';
 
 const Onboarding: React.FC = () => {
   const { finishOnboarding } = useFinance();
